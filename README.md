@@ -1,8 +1,9 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/BUBLET/MovieRecomSystem.svg)](https://github.com/BUBLET/MovieRecomSystem/graphs/contributors)
+![Last commit](https://img.shields.io/github/last-commit/BUBLET/MovieRecomSystem.svg)
 ![Python version](https://img.shields.io/badge/Python-3.6-blue.svg)
 ![HTML version](https://img.shields.io/badge/HTML-5-orange.svg)
 ![C language](https://img.shields.io/badge/Language-C-blue.svg)
-
+![TCL language](https://img.shields.io/badge/language-TCL-orange.svg)
 
 # Movie-Recommender-System
 
