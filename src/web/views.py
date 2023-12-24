@@ -86,24 +86,24 @@ def detail(request, movie_id):
     return render(request, 'web/detail.html', {'movies': movies})
 
 
-# Регистрация пользователя
+# Register user
 def signUp(request):
-    form = UserForm(request.POST or None)
-    if form.is_valid():
-        user = form.save(commit=False)
-        username = form.cleaned_data['username']
-        password = form.cleaned_data['password']
-        user.set_password(password)
-        user.save()
-        user = authenticate(username=username,password=password)
-        if user is not None:
-              if user.is_active:
-                login(request,user)
-                return redirect("index")
-              context ={
+	form =UserForm(request.POST or None)
+	if form.is_valid():
+		user      = form.save(commit=False)
+		username  =	form.cleaned_data['Имя пользователя']
+		password  = form.cleaned_data['Пароль']
+		user.set_password(password)
+		user.save()
+		user = authenticate(username=username,password=password)
+		if user is not None:
+			if user.is_active:
+				login(request,user)
+				return redirect("index")
+	context ={
 		'form':form
 	}
-    return render(request,'web/signUp.html',context)				
+	return render(request,'web/signUp.html',context)				
 
 
 # Login User
@@ -117,9 +117,9 @@ def Login(request):
 				login(request,user)
 				return redirect("index")
 			else:
-				return render(request,'web/login.html',{'error_message':'Your account disable'})
+				return render(request,'web/login.html',{'error_message':'Ваш аккаунт недоступен'})
 		else:
-			return render(request,'web/login.html',{'error_message': 'Invalid Login'})
+			return render(request,'web/login.html',{'error_message': 'Неправильный пароль'})
 	return render(request,'web/login.html')
 
 #Logout user
