@@ -1,4 +1,4 @@
-[![GitHub contributors](https://img.shields.io/github/contributors/BUBLET/Movie-Recommender-System.svg)](https://github.com/BUBLET/Movie-Recommender-System/graphs/contributors)
+[![GitHub contributors](https://img.shields.io/github/contributors/BUBLET/MovieRecomSystem.svg)](https://github.com/BUBLET/MovieRecomSystem/graphs/contributors)
 ![Python version](https://img.shields.io/badge/Python-3.6-blue.svg)
 ![HTML version](https://img.shields.io/badge/HTML-5-orange.svg)
 ![C language](https://img.shields.io/badge/Language-C-blue.svg)
