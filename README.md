@@ -2,6 +2,7 @@
 ![Last commit](https://img.shields.io/github/last-commit/BUBLET/MovieRecomSystem.svg)
 ![Python version](https://img.shields.io/badge/Python-3.6-blue.svg)
 ![HTML version](https://img.shields.io/badge/HTML-5-orange.svg)
+![JavaScript](https://img.shields.io/badge/-JavaScript-yellow.svg?logo=javascript&logoColor=white)
 
 # Movie-Recommender-System
 
