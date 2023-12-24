@@ -1,3 +1,9 @@
+[![GitHub contributors](https://img.shields.io/github/contributors/BUBLET/MovieRecomSystem.svg)](https://github.com/BUBLET/MovieRecomSystem/graphs/contributors)
+![Last commit](https://img.shields.io/github/last-commit/BUBLET/MovieRecomSystem.svg)
+![Python version](https://img.shields.io/badge/Python-3.6-blue.svg)
+![HTML version](https://img.shields.io/badge/HTML-5-orange.svg)
+![JavaScript](https://img.shields.io/badge/-JavaScript-yellow.svg?logo=javascript&logoColor=white)
+
 # Movie-Recommender-System
 
 Система рекомендации фильмов на основе коллаборативной фильтрации с использованием алгоритма матричного разложения. Рекомендации основаны на идее, что если двум пользователям нравятся определенные фильмы, то фильмы, которые один пользователь оценил положительно и другой пользователь еще не смотрел, могут быть рекомендованы второму пользователю.
