@@ -1,15 +1,15 @@
 {% extends 'web/base.html'%}
-{% block title %}Recommendations{% endblock %}
+{% block title %}Рекомендации{% endblock %}
 {% block body %}
 
 <div class="container-fluid">
-	<h2>Recommendations for You </h2>
+	<h2>Рекомендации для вас</h2>
 </div>
 
 
 	<div class="container-fluid">
     
-    <!-- Movie list -->
+    <!-- Список фильмов -->
     <div class="row">
             {% if movie_list %}
             {% for movie in movie_list %}
@@ -22,8 +22,8 @@
                         <h5>{{movie.genre}}</h5>
                         <div class="caption">
 
-                            <!-- View Details -->
-                            <a href="{% url 'detail' movie.id %}" class="btn btn-primary btn-sm" role="button">Give Rating</a>
+                            <!-- Просмотр подробной информации -->
+                            <a href="{% url 'detail' movie.id %}" class="btn btn-primary btn-sm" role="button">Оценить</a>
 
                                         
                         </div>

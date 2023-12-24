@@ -6,10 +6,10 @@
     	<form class="form-horizontal" role="search" method="get" action=''>
          <div class="form-group">
          <div class="input-group">	
-            <input type="text" class="form-control input-lg " name="q" value="{{ request.GET.q }}" placeholder= "Search Movies "/>
+            <input type="text" class="form-control input-lg " name="q" value="{{ request.GET.q }}" placeholder= "Поиск фильмов"/>
             <span class='input-group-btn'>
 
-             <button class='btn btn-info btn-lg' type='submit'>Search
+             <button class='btn btn-info btn-lg' type='submit'>Поиск
              </button>
          </span>
         </div>
@@ -28,16 +28,16 @@
     <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2 col-md-3">
-		<h1>Movies List</h1>
+		<h1>Список фильмов</h1>
         </div>
         <div class="col-xs-offset-9  mt-3">
-        <a href="{% url 'recommend' %}" class="btn"><strong><h2>Get Recommendation</h2></strong></a>
+        <a href="{% url 'recommend' %}" class="btn"><strong><h2>Получить рекомендацию</h2></strong></a>
         </div>
     </div>
 	</div>
 	<div class="container-fluid">
     
-    <!-- Movie list -->
+    <!-- Список фильмов -->
     <div class="row">
             {% if movies %}
             {% for movie in movies %}
@@ -50,8 +50,8 @@
                         <h5>{{movie.genre}}</h5>
                         <div class="caption">
 
-                            <!-- View Details -->
-                            <a href="{% url 'detail' movie.id %}" class="btn btn-primary btn-sm" role="button">Give Rating</a>
+                            <!-- Просмотр подробной информации -->
+                            <a href="{% url 'detail' movie.id %}" class="btn btn-primary btn-sm" role="button">Оценить</a>
 
                                         
                         </div>

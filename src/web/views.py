@@ -94,3 +94,35 @@ def signUp(request):
         username = form.cleaned_data['username']
         password = form.cleaned_data['password']
         user.set_password(password)
+        user.save()
+        user = authenticate(username=username,password=password)
+        if user is not None:
+              if user.is_active:
+                login(request,user)
+                return redirect("index")
+              context ={
+		'form':form
+	}
+    return render(request,'web/signUp.html',context)				
+
+
+# Login User
+def Login(request):
+	if request.method=="POST":
+		username = request.POST['username']
+		password = request.POST['password']
+		user     = authenticate(username=username,password=password)
+		if user is not None:
+			if user.is_active:
+				login(request,user)
+				return redirect("index")
+			else:
+				return render(request,'web/login.html',{'error_message':'Your account disable'})
+		else:
+			return render(request,'web/login.html',{'error_message': 'Invalid Login'})
+	return render(request,'web/login.html')
+
+#Logout user
+def Logout(request):
+	logout(request)
+	return redirect("login")

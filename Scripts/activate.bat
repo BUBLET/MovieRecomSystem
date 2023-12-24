@@ -1,4 +1,4 @@
-@set "VIRTUAL_ENV=D:\Мисис\KR_ERIAS\Movie-Recommender-System"
+@set "VIRTUAL_ENV=D:\Мисис\KR_ERIAS\MovRecomSys"
 
 @set "VIRTUAL_ENV_PROMPT="
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (
@@ -6,33 +6,33 @@
 )
 
 @if defined _OLD_VIRTUAL_PROMPT (
-    @set "PROMPT=%_OLD_VIRTUAL_PROMPT%"  # Восстанавливаем предыдущее значение PROMPT, если оно было сохранено
+    @set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
 ) else (
     @if not defined PROMPT (
-        @set "PROMPT=$P$G"  # Устанавливаем базовое значение PROMPT, если оно не было определено ранее
+        @set "PROMPT=$P$G"
     )
     @if not defined VIRTUAL_ENV_DISABLE_PROMPT (
-        @set "_OLD_VIRTUAL_PROMPT=%PROMPT%"  # Сохраняем текущее значение PROMPT
+        @set "_OLD_VIRTUAL_PROMPT=%PROMPT%"
     )
 )
 @if not defined VIRTUAL_ENV_DISABLE_PROMPT (
-    @set "PROMPT=(%VIRTUAL_ENV_PROMPT%) %PROMPT%"  # Добавляем префикс с названием виртуальной среды к PROMPT
+    @set "PROMPT=(%VIRTUAL_ENV_PROMPT%) %PROMPT%"
 )
 
-@REM Не используйте () для избежания проблем с ними в %PATH%
+@REM Don't use () to avoid problems with them in %PATH%
 @if defined _OLD_VIRTUAL_PYTHONHOME @goto ENDIFVHOME
-    @set "_OLD_VIRTUAL_PYTHONHOME=%PYTHONHOME%"  # Сохраняем предыдущее значение PYTHONHOME
+    @set "_OLD_VIRTUAL_PYTHONHOME=%PYTHONHOME%"
 :ENDIFVHOME
 
 @set PYTHONHOME=
 
 @REM if defined _OLD_VIRTUAL_PATH (
 @if not defined _OLD_VIRTUAL_PATH @goto ENDIFVPATH1
-    @set "PATH=%_OLD_VIRTUAL_PATH%"  # Восстанавливаем предыдущее значение PATH
+    @set "PATH=%_OLD_VIRTUAL_PATH%"
 :ENDIFVPATH1
 @REM ) else (
 @if defined _OLD_VIRTUAL_PATH @goto ENDIFVPATH2
-    @set "_OLD_VIRTUAL_PATH=%PATH%"  # Сохраняем текущее значение PATH
+    @set "_OLD_VIRTUAL_PATH=%PATH%"
 :ENDIFVPATH2
 
-@set "PATH=%VIRTUAL_ENV%\Scripts;%PATH%"  # Добавляем путь к исполняемым файлам виртуальной среды в PATH
+@set "PATH=%VIRTUAL_ENV%\Scripts;%PATH%"

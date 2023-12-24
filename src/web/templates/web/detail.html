@@ -8,7 +8,7 @@
 
     <div class="row">
 
-        <!-- Left Movie Info -->
+        <!-- Левая часть информации о фильме -->
         <div class="col-sm-2 col-md-3">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -19,12 +19,12 @@
                 </div>
             </div>
         </div>
-        <!-- Right Movie Info -->
+        <!-- Правая часть информации о фильме -->
         <div class="col-sm-offset-1 col-sm-4 col-md-4">
             <h1>{{movies.title}}</h1>
             <h3><small>{{movies.genre}}</small></h3>
-        	<h1><small>Have you watch ?</small></h1>
-            <h3><small>Please rate to get recommendation </small></h3>
+        	<h1><small>Вы смотрели этот фильм?</small></h1>
+            <h3><small>Пожалуйста, оцените его, чтобы получить рекомендации</small></h3>
             {% if messages %}
             <ul class="messages">
             {% for message in messages %}
@@ -50,7 +50,7 @@
                 </div>
             </div>
             </div>
-            <input type="submit" class="btn btn-info" value="submit">
+            <input type="submit" class="btn btn-info" value="Отправить">
                 
 
          </div>

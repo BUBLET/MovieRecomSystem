@@ -1,7 +1,7 @@
-# Этот файл должен быть использован с помощью команды `source bin/activate.fish` *внутри запущенной сессии оболочки fish ( http://fishshell.com ) *.
-# Не запускайте его напрямую.
+# This file must be used using `source bin/activate.fish` *within a running fish ( http://fishshell.com ) session*.
+# Do not run it directly.
 
-function _bashify_path -d "Преобразует путь в формате fish в формат, который может распознать bash"
+function _bashify_path -d "Converts a fish path to something bash can recognize"
     set fishy_path $argv
     set bashy_path $fishy_path[1]
     for path_part in $fishy_path[2..-1]
@@ -10,12 +10,12 @@ function _bashify_path -d "Преобразует путь в формате fis
     echo $bashy_path
 end
 
-function _fishify_path -d "Преобразует путь в формате bash в формат, который может распознать fish"
+function _fishify_path -d "Converts a bash path to something fish can recognize"
     echo $argv | tr ':' '\n'
 end
 
-function deactivate -d 'Выйти из режима виртуальной среды и вернуться к обычной среде.'
-    # восстановление старых переменных среды
+function deactivate -d 'Exit virtualenv mode and return to the normal environment.'
+    # reset old environment variables
     if test -n "$_OLD_VIRTUAL_PATH"
         # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
         if test (echo $FISH_VERSION | head -c 1) -lt 3
@@ -33,10 +33,10 @@ function deactivate -d 'Выйти из режима виртуальной ср
 
     if test -n "$_OLD_FISH_PROMPT_OVERRIDE"
        and functions -q _old_fish_prompt
-        # Установка пустого локального `$fish_function_path` для возможности удаления `fish_prompt` с помощью `functions -e`.
+        # Set an empty local `$fish_function_path` to allow the removal of `fish_prompt` using `functions -e`.
         set -l fish_function_path
 
-        # Удаление `fish_prompt` виртуальной среды и восстановление оригинала.
+        # Erase virtualenv's `fish_prompt` and restore the original.
         functions -e fish_prompt
         functions -c _old_fish_prompt fish_prompt
         functions -e _old_fish_prompt
@@ -47,7 +47,7 @@ function deactivate -d 'Выйти из режима виртуальной ср
     set -e VIRTUAL_ENV_PROMPT
 
     if test "$argv[1]" != 'nondestructive'
-        # Самоуничтожение!
+        # Self-destruct!
         functions -e pydoc
         functions -e deactivate
         functions -e _bashify_path
@@ -55,10 +55,10 @@ function deactivate -d 'Выйти из режима виртуальной ср
     end
 end
 
-# Отмена нерелевантных переменных.
+# Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'D:\Мисис\KR_ERIAS\Movie-Recommender-System'
+set -gx VIRTUAL_ENV 'D:\Мисис\KR_ERIAS\MovRecomSys'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3
@@ -68,15 +68,15 @@ else
 end
 set -gx PATH "$VIRTUAL_ENV"'/Scripts' $PATH
 
-# Переопределение приглашения?
-# Если нет, то используйте имя среды.
+# Prompt override provided?
+# If not, just use the environment name.
 if test -n ''
     set -gx VIRTUAL_ENV_PROMPT ''
 else
     set -gx VIRTUAL_ENV_PROMPT (basename "$VIRTUAL_ENV")
 end
 
-# Отмена установленной переменной `$PYTHONHOME`, если она установлена.
+# Unset `$PYTHONHOME` if set.
 if set -q PYTHONHOME
     set -gx _OLD_VIRTUAL_PYTHONHOME $PYTHONHOME
     set -e PYTHONHOME
@@ -87,16 +87,16 @@ function pydoc
 end
 
 if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
-    # Копирование текущей функции `fish_prompt` в `_old_fish_prompt`.
+    # Copy the current `fish_prompt` function as `_old_fish_prompt`.
     functions -c fish_prompt _old_fish_prompt
 
     function fish_prompt
-        # Сначала выполняется пользовательское приглашение; оно может зависеть от (pipe)status.
+        # Run the user's prompt first; it might depend on (pipe)status.
         set -l prompt (_old_fish_prompt)
 
         printf '(%s) ' $VIRTUAL_ENV_PROMPT
 
-        string join -- \n $prompt # обработка многострочных приглашений
+        string join -- \n $prompt # handle multi-line prompts
     end
 
     set -gx _OLD_FISH_PROMPT_OVERRIDE "$VIRTUAL_ENV"
