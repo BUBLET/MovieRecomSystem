@@ -91,8 +91,8 @@ def signUp(request):
 	form =UserForm(request.POST or None)
 	if form.is_valid():
 		user      = form.save(commit=False)
-		username  =	form.cleaned_data['Имя пользователя']
-		password  = form.cleaned_data['Пароль']
+		username  =	form.cleaned_data['username']
+		password  = form.cleaned_data['password']
 		user.set_password(password)
 		user.save()
 		user = authenticate(username=username,password=password)
